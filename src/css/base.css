@@ -1,0 +1,604 @@
+
+/* Base */
+
+:root {
+    --bg-color: #111;
+    --size-notifyitem: 65px;
+    --position-top-3bar: 80px;
+    --head-size: 60px;
+    --option-size: 55px;
+    --size-separator: 10px;
+    --size-head-bottom: 20px
+}
+
+body {
+    background-color: var(--bg-color);
+    color: white;
+}
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+*::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+
+#_vinestar_load {
+    transition: 1s;
+    position: fixed;
+    z-index: 100;
+    background-position: center;
+    background-size: 250px;
+    background-color: #111;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/img/logo.png");
+    background-repeat: no-repeat;
+    top: 0px;
+    left: 0px;
+
+}
+
+#_vinestar_login {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: var(--bg-color);
+    z-index: 99;
+}
+
+#__app__ {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+html, body, .app {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+}
+.img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    transition: 0.4s;
+    cursor: pointer;
+    height: max-content;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.medio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.v-center {
+    display: flex;
+    align-items: center;
+}
+.h-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.l {float: left;}
+.r {float: right;}
+
+.node {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+.borde {
+    border-radius: 10px;
+}
+
+
+
+
+
+.text-color-gray {color: gray;}
+.text-color-red {color: crimson;}
+
+.text-center {text-align: center;}
+
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.head-bm {
+    width: 100%;
+    height: var(--head-size);
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: var(--head-size);
+}
+
+
+
+.body-bm {
+    width: 100%;
+    min-height: calc(100% - 70px);
+}
+
+/* Post */
+
+.post {
+    transition: 0.4s;
+}
+.post:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 5px white;
+}
+
+.contain-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+}
+
+/* Cartas del perfil */
+
+.profile {
+    border-radius: 50%;
+}
+
+.card-profile {
+    width: 100%;
+    height: max-content;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-profile-portada {
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-profile-foto {
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    border: solid white 5px;
+    transform: translate(0px, 75px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-profile-user {
+    margin-top: 50px;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 16px;
+}
+
+
+/* Login */
+
+.login {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    height: max-content;
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+.login input, .login select {
+    background-color: transparent;
+    color: white;
+    border: solid 0px white;
+    border-bottom: solid 4px dodgerblue;
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 50px);
+}
+
+.login input:focus, .login select:focus {
+    border: solid 0px white;
+    border-bottom: solid 4px dodgerblue;
+    outline: none;
+}
+
+.login select option {
+    background-color: var(--bg-color);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login .box {
+    width: calc(100% - 50px);
+    margin: 10px;
+    padding-left: 0px;
+}
+
+.login .button {
+    color: white;
+    border: solid 0px white;
+    background-color: dodgerblue;
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 50px);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.login .checkbox, .checkbox {
+    width: 40px;
+    height: 20px;
+    margin: 0px;
+    size: 20px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.login .checkbox:checked, .checkbox:checked {
+    background-color: green;
+} 
+
+
+.register-box {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.cicle {
+    position: relative;
+    height: calc(100% - 260px);
+    width: 500%;
+    transition: 0.5s;
+}
+
+.node-cicle {
+    width: 100%;
+    height: max-content;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.cicle-progres {
+    height: 100px;
+    width: 100%;
+}
+
+.cicle-next {
+    height: 160px;
+    width: 100%;
+}
+
+.cicle-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 95px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.cicle-progres-bar {
+    background-color: #333;
+    width: 100%;
+    height: 5px;
+}
+.cicle-progres-bar-fill {
+    height: 100%;
+    background-color: dodgerblue;
+    transition: 0.5s;
+}
+
+/* Notificaciones */
+
+.notifyitem-box {
+    width: 100%;
+    height: var(--size-notifyitem);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.notifyitem-img-box {
+    width: var(--size-notifyitem);
+    height: var(--size-notifyitem);
+    float: left;
+}
+
+.notifyitem-img {
+    border-radius: 50%;
+}
+.notifyitem-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notifyitem-body {
+    height: 100%;
+    width: calc(100% - var(--size-notifyitem));
+    padding: 10px;
+    float: left;
+}
+
+.notifyitem-title {
+
+    font-weight: bold;
+    width: 100%;
+
+}
+.notifyitem-desc {
+
+    color: gray;
+    width: 100%;
+    font-size: 12px;
+    overflow: hidden;
+    height: 18px;
+    
+}
+
+
+/* Options Barra L */
+
+
+.option-box {
+    padding-left: 10px;
+    width: 100%;
+    height: var(--option-size);
+    border-radius: calc( var(--option-size) / 2);
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.option-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.option-title {
+    padding: 10px;
+    width: calc(100% - var(--option-size));
+    height: var(--option-size);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Barras */
+
+.barra-l, .barra-r {
+    transition: 0.4s;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    background-color: var(--bg-color);
+    z-index: 6;
+
+
+
+}
+.barra-m {
+    transition: 0.4s;
+    padding: 10px;
+    padding-bottom: 0px;
+    position: absolute;
+    height: 100%;
+    background-color: var(--bg-color);
+    width: calc(100% - 600px);
+}
+
+.head-fixed {
+    
+
+    position: fixed;
+    height: calc(var(--head-size) +  (var(--size-separator) * 2));
+    width: calc(100% - 600px);
+    top: 0px;
+    z-index: 5;
+    padding: var(--size-separator);
+    background-color: var(--bg-color);
+    flex-wrap: wrap;
+    box-shadow: 0px 10px 20px var(--bg-color);
+    
+}
+
+
+.head-fixed-bottom {
+    width: 100%;
+    height: var(--size-head-bottom);
+    background: linear-gradient(90deg, var(--bg-color), transparent);
+}
+
+.head-fixed-content {
+    width: 100%;
+    height: 100%;
+}
+
+.fail-head {
+    width: 100%;
+    height: var(--head-size);
+    margin-bottom: var(--size-separator);
+}
+
+
+/* pages */
+
+.load-e, .body-content {
+    width: 100%;
+    height: max-content;
+}
+
+
+/* Full BM */
+
+.button.full-bm, .barra-r.full-bm {
+    display: none;
+}
+
+
+/* portraid */
+
+@media screen and (max-width: 700px) {
+
+    
+    *::-webkit-scrollbar {
+        width: 0px;
+        
+    }
+
+    .land {display: none;}
+    .land2 {display: none;}
+
+    .barra-l, .barra-m, .barra-r {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .head-fixed {
+        width: 100%;
+        left: 0px;
+    }
+
+    .barra-l {
+        left: -100%;
+    }
+    
+    .barra-r {
+        left: 100%;
+    }
+    
+    .barra-m {
+        left: 0px;
+    }
+
+
+    .barra-open {
+        left: 0px;
+    }
+
+    #_vinestar_login {
+        background-color: #1e1e1e;
+
+    }
+
+}
+
+/* landscape small */
+
+
+@media screen and (min-width: 700px) and (max-width: 1200px) {.land2 {display: none;}}
+@media screen and (min-width: 700px) {
+    .port {display: none;}
+
+    .barra-l {
+        left: 0px;
+    }
+    .barra-m, .head-fixed {
+        left: 300px;
+        width: calc(100% - 300px);
+    }
+    .barra-r {
+        border-radius: 10px;
+        left: 105%;
+        box-shadow: 0px 0px 10px #555;
+        top: var(--position-top-3bar);
+        height: calc(100% - var(--position-top-3bar) - 10px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 350px;
+    }
+
+    .barra-r.barra-open {
+        left: calc(100% - 360px);
+    }
+    
+}
+
+/* landscape large */
+
+
+@media screen and (min-width: 1200px) {
+    .-land2 {display: none;}
+    .barra-m, .head-fixed {
+        width: calc(100% - 600px);
+    }
+
+    .head-fixed.full-bm, .barra-m.full-bm {
+        width: calc(100% - 300px);
+    }
+
+    .barra-r {
+        border-radius: 0px;
+        left: calc(100% - 300px);
+        box-shadow: 0px 0px 0px transparent;
+        top: 0px;
+        height: 100%;
+        width: 300px;
+    }
+
+    .barra-r.barra-open {
+        left: calc(100% - 300px);
+    }
+}
+
+
+
+
+/* Correctores */
+
+
+.noborde {
+    border-radius: 0px;
+}
+
+.nospace {
+    margin: 0px;
+    padding: 0px;
+}
+  
