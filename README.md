@@ -3,14 +3,14 @@
 </h1>
 <hr>
 <h3>
-	requerimientos:
+	PASO 1: requerimientos:
 </h3>
 <p>
 	para poder hacer uso de esta aplicacion primero es nesesario tomar en cuenta que debes de tener: <a href="https://nodejs.org/en">NodeJS</a> instalado en tu equipo. una vez tenido ya eso, en la raiz del proyecto debe abrir una termina o linea de comandos y ejecutar los siguientes comandos nesesarios para poder hacer uso de tu aplicacion: 
 </p>
 <br>
 <h3>
-	Instalacion:
+	PASO 2: Instalacion:
 </h3>
 <p>
 	para poder hacer la instalacion debes de ejecutar el siguiente comando:
@@ -20,7 +20,7 @@
 	
 <hr>
 <h3>
-	Ejecutar en modo de desarrollo
+	PASO 3: Ejecutar en modo de desarrollo
 </h3>
 <p>
 	¡¡Una vez hecho esto, ya podras usar la aplicacion!!
@@ -47,6 +47,10 @@
 
 <hr>
 
+<h3>
+	Instrucciones para imbeciles:
+</h3>
+
 <p>
-	pero como a maydan la veo haciendo preguntas y no resolviendo se bien que no va a entender esta simple guia por lo que le facilitare la tarea dejando 2 ejecutables, uno que instala las dependencias con el nombre "install.cmd" y otro que ejecuta la aplicacion con el nombre "start.cmd"
+	pero como a maydan la veo haciendo preguntas y no resolviendo se bien que no va a entender esta simple guia por lo que le facilitare la tarea dejando 2 ejecutables, uno que instala las dependencias con el nombre "install.cmd" y otro que ejecuta la aplicacion con el nombre "start.cmd" estos solo se abren dando doble click
 </p>
