@@ -8,7 +8,7 @@
 <p>
 	para poder hacer uso de esta aplicacion primero es nesesario tomar en cuenta que debes de tener: <a href="https://nodejs.org/en">NodeJS</a> instalado en tu equipo. una vez tenido ya eso, en la raiz del proyecto debe abrir una termina o linea de comandos y ejecutar los siguientes comandos nesesarios para poder hacer uso de tu aplicacion: 
 </p>
-<br>
+<hr>
 <h3>
 	PASO 2: Instalacion:
 </h3>
