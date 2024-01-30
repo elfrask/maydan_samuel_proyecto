@@ -1,7 +1,11 @@
 :root {
-    --bgcolor: #00000010
+    --bg-object: rgb(128, 128, 128, 0.1);
+    --bg-object-hover: rgb(128, 128, 128, 0.2);
+    --fill: "-webkit-fill-available";
+    --bg-color-objects-page: #f7f0e7;
+    --bg-color-page: #fbf8f9;
+    --border-color-page: rgb(207 197 186);
 }
-
 * {
     padding: 0%;
     margin: 0%;
@@ -10,7 +14,292 @@
 
 .header {
     width: 100%;
-    height: 50px;
+    height: 75px;
+    z-index: 1;
+    box-shadow: 0px 0px 20px black;
+    background-color: var(--bg-color-objects-page);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.header .s2 {
+    background-position: center;
+    background-size: 20%;
+    background-image: url('/src/img/bgs/bg-head.svg');
+    color: white;
 }
 
 
+.bodypage {
+    width: 100%;
+    height: calc(100% - 75px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 100%;
+    max-width: 800px;
+    height: max-content;
+}
+
+.button {
+    cursor: pointer;
+    float: left;
+}
+
+.l{float: left;}
+.r{float: right;}
+
+.img, .button {
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+}
+
+.specialbutton {
+    mix-blend-mode: normal;
+    filter: invert();
+    background-color: transparent;
+}
+
+.specialbutton:hover {
+    
+    mix-blend-mode: lighten;
+    background-color: white;
+    filter: invert(0);
+}
+
+
+
+.table {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+    overflow: hidden;
+}
+
+.sub-table {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.table-head {
+    min-width: 100%;
+    width: max-content;
+    padding-right: 15px;
+    height: 49px;
+    border-bottom: solid gray 1px;
+
+}
+
+.table-body {
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    background-color: rgb(219, 219, 219);    
+}
+
+.table-sub-body {
+    min-width: 100%;
+    width: max-content;
+    height: max-content;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0px;
+    
+}
+
+
+
+.table-head-date {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: max-content;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.4s;
+    border-right: solid rgb(161, 161, 161) 1px;
+    display: flex;
+}
+
+.table-head-date:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+.table-body-date {
+    float: left;
+    height: 100%;
+    padding: 5px;
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    cursor: pointer;
+    transition: 0.4s;
+    border-right: solid rgb(161, 161, 161) 1px;
+    overflow: hidden;
+    display: flex;
+}
+
+.table-body-row-date {
+    min-width: 100%;
+    width: max-content;
+    height: 30px;
+    border-bottom: solid gray 1px;
+    transition: 0.4s;
+}
+
+.table-body-row-date:hover {
+    background-color: rgb(187, 187, 187);
+}
+
+
+
+.select-gui {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-object);
+    float: left;
+    
+}
+
+.select-gui:focus {
+    outline: none;
+    border: none;
+}
+
+
+.select-gui-option {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-object);  
+}
+
+
+
+.search-select {
+    padding: 10px;
+    border: none;
+    background-color: var(--bg-object);
+    float: left;
+}
+
+.search-select:focus {
+    border: none;
+    outline: none;
+}
+
+
+.search-input {
+    float: left;
+    height: 100%;
+    width: -webkit-fill-available;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.search-input:focus {
+    border: none;
+    outline: none;
+}
+
+.search {
+    overflow: hidden;
+    height: 43px;
+    width: max-content;
+    border-radius: 0px;
+    background-color: var(--bg-color-objects-page);
+    display: flex;
+    border: solid 2px var(--border-color-page);
+
+}
+
+.db-card {
+    background-color: var(--bg-color-objects-page);
+    transition: 0.4s;
+    overflow: hidden;
+    width: 200px;
+    height: calc(200px + 50px);
+    border-radius: 0px;
+    cursor: pointer;
+    float: left;
+    margin: 10px;
+    border: solid 2px var(--border-color-page);
+}
+
+.db-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px black;
+}
+
+.db-card-img {
+    width: 200px;
+    height: 200px;
+    background-size: 40%;
+    border-bottom: 2px solid var(--border-color-page);
+}
+
+.db-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(50px - 2px);
+    width: 100%;
+}
+
+.list-dbs {
+    position: fixed;
+    left: 0px;
+    margin-top: 10px;
+    background-color: var(--bg-object);
+    width: 100%;
+    height: -webkit-fill-available;
+    overflow-y: auto;
+}
+
+.subhead {
+    width: 100%;
+    height: 100px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.subbody {
+    width: 100%;
+    min-height: calc(100% - 100px);
+}
+
+.bg-white {background-color: white;}
+.bg-use-color {background-color: #fbf8f9;}
+
+.list-db {
+    margin-top: 30px;
+    width: 100%;
+    height: max-content;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.imgbg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

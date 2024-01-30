@@ -308,6 +308,9 @@ class Button extends React.Component { // style, className, img, click, size o (
                     height:this.props.size||this.props.y||"",
                 }, this.props.style)}
                 onClick={genlink(this.props.click)}
+                onError={() => {
+                    console.log("error al cargar la imagen")
+                }}
             >
                 {this.props.children}
             </div>
@@ -351,3 +354,181 @@ class Box extends React.Component { // style, className, img, click, size o (x, 
         )
     }
 };
+
+
+
+
+
+
+
+
+
+class TableHeaderDate extends React.Component {
+
+    componentDidMount() {
+
+    }
+    render() {
+
+        return(
+            <div className="table-head-date" tid={this.props.tableid} idp={this.props.id}>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+class TableBodyDate extends React.Component {
+    render() {
+
+        return(
+            <div className="table-body-date" style={{width: this.props.size}}>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+class TableBodyRowDate extends React.Component {
+
+    render() {
+        
+        return(
+            
+            <div className="table-body-row-date" >
+                {
+                    this.props.table_shows.map(x=> {
+                        let data = this.props.data;
+                        let show = data[x];
+                        let estados = this.props.states
+
+
+                        if (estados!== undefined) {
+                            //console.log(x, estados)
+                            if (estados[x] !== undefined) {
+                                show = estados[x][show]||show;
+                            }
+                        }
+
+                        return(
+                            <TableBodyDate size={this.props.sizes[x]}>
+                                {show}
+                            </TableBodyDate>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+}
+
+let tables = {}
+
+class Table extends React.Component {
+
+    state = {
+        ordenado_por: "",
+        invert: false,
+        sizes: {
+
+        },
+        x_scroll: 0,
+        table_visible: false,
+        states: {
+
+        }
+    }
+
+    ordenar_por(id, invert) {
+
+    };
+
+    componentDidMount() {
+        setTimeout(() => {
+            let st = this.props.states||{};
+            let list = Object.keys(st);
+
+            let out = {};
+
+            list.forEach(x=>{
+                let st_item = st[x]||[];
+
+                out[x] = {};
+
+                st_item.forEach(y=> {
+                    out[x][y.id] = y.caption
+                })
+            })
+
+            
+            this.setState({sizes: tables[this.props.id], table_visible: true, states:out})
+        }, 100)
+    }
+
+    render() {
+
+        let table_dates = this.props.dates.map(x => x.id);
+        if (tables[this.props.id] === undefined) tables[this.props.id] = {}
+
+        return(
+            <div className="table">
+                <div className="sub-table"
+                    onScroll={(e) => {
+                        let target = e.target
+                        this.setState({
+                            x_scroll:target.scrollLeft
+                        })
+                    }}
+                >
+                    <div className="table-head">
+                        {
+                            this.props.dates.map(x => {
+                                return(
+                                    <TableHeaderDate click size={this.state.sizes} id={x.id} tableid={this.props.id}>
+                                        {x.caption}
+                                    </TableHeaderDate>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="table-body" style={{
+                                        left: this.state.x_scroll,
+                                        display: (this.state.table_visible?"block":"none")
+                    }} >
+                        <div className="table-sub-body" style={{left: -this.state.x_scroll, padding: "0px"}} >
+
+                            {
+                                this.props.items.map(x  => {
+                                    return(
+                                        <TableBodyRowDate 
+                                            data={x} 
+                                            table_shows={table_dates} 
+                                            sizes={this.state.sizes} 
+                                            states={this.state.states}
+                                        ></TableBodyRowDate>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        )
+    }
+}
+
+class Dbcard extends React.Component {
+    render() {
+
+        return(
+            <div className="db-card" onClick={genlink(this.props.click)}>
+                <div className="db-card-img img" style={{backgroundImage:`url('${this.props.img}')`}}>
+                </div>
+                <div className="db-card-title">
+                    {this.props.title}
+                </div>
+            </div>
+        )
+    }
+}

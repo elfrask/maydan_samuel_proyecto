@@ -8,7 +8,7 @@ const { env } = require("process");
 
 app.use(bp.json({}));
 
-let PORT = env["PORT"];
+let PORT = env["PORT"]||9090;
 
 function parse_path(path_file) {
     return path.join(__dirname, path_file)
