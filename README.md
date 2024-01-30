@@ -6,7 +6,7 @@
 	requerimientos:
 </h3>
 <p>
-	para poder hacer uso de esta aplicacion primero es nesesario tomar en cuenta que debes de tener: <a href="https://nodejs.org/en">NodeJS</a> instalado en tu equipo <br>
+	para poder hacer uso de esta aplicacion primero es nesesario tomar en cuenta que debes de tener: <a href="https://nodejs.org/en">NodeJS</a> instalado en tu equipo.
 
 	una vez tenido ya eso, en la raiz del proyecto debe abrir una termina o linea de comandos y ejecutar los siguientes comandos nesesarios para poder hacer uso de tu aplicacion: 
 </p>
@@ -38,3 +38,7 @@
 	para ejecutar tu aplicacion en el modo de produccion solo ejecuta:
 </p>
 	<code>npm run start</code>
+<hr>
+<p>
+	pero como a maydan la veo haciendo preguntas y no resolviendo se bien que no va a entender esta simple guia por lo que le facilitare la tarea dejando 2 ejecutables, uno que instala las dependencias con el nombre "install.cmd" y otro que ejecuta la aplicacion con el nombre "start.cmd"
+</p>
